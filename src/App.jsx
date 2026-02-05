@@ -6,6 +6,7 @@ import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import Footer from './components/Footer';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,6 +27,7 @@ function App() {
       <Services />
       <About />
       <Contact />
+      <Footer />
       <FloatingWhatsApp />
     </div>
   );

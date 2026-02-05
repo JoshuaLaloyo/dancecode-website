@@ -5,16 +5,16 @@ const About = () => {
   const team = [
     {
       id: 1,
-      name: 'Developer 1',
+      name: 'Jay',
       role: 'Full Stack Developer',
-      image: 'https://via.placeholder.com/200/0a1128/00d9ff?text=Dev+1',
+      image: 'src/images/jay.jpeg',
       description: 'Passionate about creating seamless user experiences.'
     },
     {
       id: 2,
-      name: 'Developer 2',
+      name: 'Josh',
       role: 'UI/UX Designer',
-      image: 'https://via.placeholder.com/200/0a1128/0099ff?text=Dev+2',
+      image: 'src/images/josh.jpeg',
       description: 'Bringing creative visions to life through code.'
     }
   ];
