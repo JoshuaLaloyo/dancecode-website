@@ -21,7 +21,11 @@ const Navbar = ({ scrolled }) => {
       <div className="container">
         <div className="navbar-content">
           <div className="logo">
-            <span className="logo-text">dancecode</span>
+            <span className="logo-text">
+              <span className="logo-bracket">⟨</span>
+              <span className="logo-word">dancecode</span>
+              <span className="logo-bracket">⟩</span>
+            </span>
           </div>
           <ul className="nav-links">
             <li><a onClick={() => scrollToSection('home')}>Home</a></li>

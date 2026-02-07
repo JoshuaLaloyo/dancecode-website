@@ -1,5 +1,7 @@
 import React from 'react';
 import './Services.css';
+import { GlowingEffect } from './ui/glowing-effect';
+import { BackgroundPaths } from './ui/background-paths';
 
 const Services = () => {
   const services = [
@@ -40,6 +42,9 @@ const Services = () => {
 
   return (
     <section id="services" className="services">
+      <div className="services-paths" aria-hidden="true">
+        <BackgroundPaths showContent={false} className="services-paths__inner" />
+      </div>
       <div className="container">
         <div className="services-header">
           <h2 className="section-title">What We <span className="gradient-text">Offer</span></h2>
@@ -54,11 +59,21 @@ const Services = () => {
               className="service-card"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="service-icon">
-                {service.icon}
+              <GlowingEffect
+                spread={40}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.05}
+                borderWidth={2}
+              />
+              <div className="service-card__content">
+                <div className="service-icon">
+                  {service.icon}
+                </div>
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
               </div>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
             </div>
           ))}
         </div>

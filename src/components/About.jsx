@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import { GlowingEffect } from './ui/glowing-effect';
 
 const About = () => {
   const team = [
@@ -8,14 +9,18 @@ const About = () => {
       name: 'Jay',
       role: 'Full Stack Developer',
       image: '/images/jay.jpeg',
-      description: 'With expertise in modern web technologies, Jay transforms complex ideas into elegant, performant solutions. Dedicated to writing clean code and delivering exceptional user experiences.'
+      description: 'With expertise in modern web technologies, Jay transforms complex ideas into elegant, performant solutions.',
+      badge: 'Core',
+      meta: 'DanceCode Team'
     },
     {
       id: 2,
       name: 'Josh',
       role: 'UI/UX Designer',
       image: '/images/josh.jpeg',
-      description: 'Josh brings designs to life with a keen eye for detail and user-centered thinking. Passionate about creating intuitive interfaces that blend aesthetics with functionality.'
+      description: 'Josh brings designs to life with a keen eye for detail and user-centered thinking.',
+      badge: 'Premium',
+      meta: 'DanceCode Team'
     }
   ];
 
@@ -36,18 +41,47 @@ const About = () => {
               className="team-card"
               style={{ animationDelay: `${index * 0.3}s` }}
             >
-              <div className="team-image-wrapper">
-                <div className="team-image-border">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="team-image"
-                  />
+              <GlowingEffect
+                spread={40}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.05}
+                borderWidth={2}
+                className="team-card__glow"
+              />
+              <div className="team-card__surface">
+                <div className="team-card__status">
+                  <span className="status-dot status-dot--online" />
+                  <span className="status-dot status-dot--star">★</span>
+                </div>
+                <div className="team-image-wrapper">
+                  <div className="team-image-border">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="team-image"
+                    />
+                  </div>
+                </div>
+                <h3 className="team-name">{member.name}</h3>
+                <p className="team-role">{member.role}</p>
+                <p className="team-meta">{member.meta}</p>
+                <span className="team-badge">{member.badge}</span>
+                <p className="team-description">{member.description}</p>
+                <div className="team-actions">
+                  <button className="team-action" type="button" aria-label="Connect">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 6v12M6 12h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </button>
+                  <button className="team-action" type="button" aria-label="Message">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M21 12a8.5 8.5 0 0 1-8.5 8.5H7l-4 3 1.4-4.6A8.5 8.5 0 1 1 21 12Z" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
                 </div>
               </div>
-              <h3 className="team-name">{member.name}</h3>
-              <p className="team-role">{member.role}</p>
-              <p className="team-description">{member.description}</p>
             </div>
           ))}
         </div>

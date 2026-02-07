@@ -76,40 +76,232 @@
 
 .hero-illustration {
   position: relative;
-  height: 500px;
+  height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: auto;
 }
 
 .illustration-item {
   position: absolute;
-  animation: float 6s ease-in-out infinite;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  will-change: transform;
 }
 
 .illustration-item.laptop {
-  width: 300px;
+  width: 360px;
+  aspect-ratio: 4 / 3;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(-2deg);
   z-index: 3;
   filter: drop-shadow(0 20px 40px rgba(0, 217, 255, 0.3));
 }
 
 .illustration-item.code {
-  width: 150px;
-  right: 0;
-  top: 0;
-  animation-delay: -2s;
-  opacity: 0.8;
+  width: 210px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translate(40px, -40px) rotate(6deg);
+  opacity: 0.85;
+  z-index: 2;
 }
 
 .illustration-item.teamwork {
-  width: 150px;
-  left: 0;
-  bottom: 50px;
-  animation-delay: -4s;
-  opacity: 0.7;
+  width: 210px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translate(-50px, 45px) rotate(-6deg);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.hero-illustration:hover .illustration-item.laptop {
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.03);
+}
+
+.hero-illustration:hover .illustration-item.code {
+  transform: translate(-50%, -50%) translate(150px, -110px) rotate(10deg);
+  opacity: 1;
+}
+
+.hero-illustration:hover .illustration-item.teamwork {
+  transform: translate(-50%, -50%) translate(-160px, 120px) rotate(-10deg);
+  opacity: 1;
+}
+
+.device {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.device-screen {
+  width: 100%;
+  flex: 1;
+  background: linear-gradient(135deg, #0b1427 0%, #0e1c3d 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(0, 217, 255, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 217, 255, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  padding: 14px 16px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.device-screen::before {
+  content: "";
+  position: absolute;
+  inset: -35% -10% auto -10%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.4) 0%, transparent 70%);
+  opacity: 0.6;
+}
+
+.device-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(transparent 95%, rgba(255, 255, 255, 0.04) 100%);
+  background-size: 100% 22px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.screen-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.screen-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.screen-dot:nth-child(1) {
+  background: #ff6b6b;
+}
+
+.screen-dot:nth-child(2) {
+  background: #ffd166;
+}
+
+.screen-dot:nth-child(3) {
+  background: #06d6a0;
+}
+
+.screen-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.code-line {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0, 217, 255, 0.9), rgba(0, 153, 255, 0.4));
+  box-shadow: 0 4px 10px rgba(0, 217, 255, 0.2);
+}
+
+.screen-chip {
+  margin-top: 6px;
+  height: 24px;
+  width: 70%;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.5), rgba(0, 153, 255, 0.8));
+  box-shadow: 0 10px 20px rgba(0, 217, 255, 0.3);
+}
+
+.device-base {
+  width: 112%;
+  height: 22%;
+  margin-top: -12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(16, 24, 39, 0.95) 100%);
+  border-radius: 0 0 22px 22px;
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.float-card {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.12) 0%, rgba(0, 153, 255, 0.2) 100%);
+  border: 1px solid rgba(0, 217, 255, 0.35);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.card-title {
+  height: 10px;
+  width: 55%;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+}
+
+.float-badge {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.18) 0%, rgba(0, 153, 255, 0.1) 100%);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 18px;
+  padding: 14px 16px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.badge-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.9), rgba(0, 153, 255, 0.6));
+  border: 2px solid rgba(10, 17, 40, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+.avatar + .avatar {
+  margin-left: -8px;
+}
+
+.badge-line {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-50 {
+  width: 50%;
 }
 
 .hero-background {
@@ -138,14 +330,29 @@
   right: -200px;
 }
 
-.orb-2 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--color-blue-glow) 0%, transparent 70%);
-  bottom: -150px;
-  left: -150px;
-  animation-delay: -4s;
+
+/* Animations canva effect styling */
+.particles-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
+
+.hero {
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-background {
+  z-index: 0;
+}
+
+
 
 @media (max-width: 968px) {
   .hero-content {
@@ -164,22 +371,22 @@
   }
 
   .hero-illustration {
-    height: 400px;
+    height: 460px;
   }
 
   .illustration-item.laptop {
-    width: 250px;
+    width: 300px;
   }
 
   .illustration-item.code,
   .illustration-item.teamwork {
-    width: 120px;
+    width: 175px;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 60px;
+    padding-top: 90px;
   }
 
   .hero-title {
@@ -196,15 +403,15 @@
   }
 
   .hero-illustration {
-    height: 300px;
+    height: 340px;
   }
 
   .illustration-item.laptop {
-    width: 200px;
+    width: 240px;
   }
 
   .illustration-item.code,
   .illustration-item.teamwork {
-    width: 100px;
+    width: 140px;
   }
 }

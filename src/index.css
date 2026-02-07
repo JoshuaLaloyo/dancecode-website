@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -33,4 +37,158 @@ html {
 
 #root {
   min-height: 100vh;
+}
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.kdl-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  padding: 32px;
+}
+
+.kdl-row {
+  display: flex;
+  gap: 20px;
+}
+
+.kdl-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 80px;
+  width: 24px;
+}
+
+.kdl-dot {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  z-index: 10;
+}
+
+.kdl-ball {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #7dd3fc 0%, #2563eb 100%);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+}
+
+.kdl-highlight {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  filter: blur(0.5px);
+}
+
+.kdl-ripple {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 12px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.kdl-shadow {
+  position: absolute;
+  bottom: -4px;
+  width: 20px;
+  height: 6px;
+  border-radius: 100%;
+  background: rgba(6, 182, 212, 0.4);
+  filter: blur(4px);
+}
+
+.glowing-effect {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  filter: blur(var(--blur, 0px));
+  z-index: 0;
+}
+
+.glowing-effect__border {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.glowing-effect__glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.glowing-effect__glow::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--glowingeffect-border-width, 1px));
+  border: var(--glowingeffect-border-width, 1px) solid transparent;
+  background: var(--gradient);
+  background-attachment: fixed;
+  opacity: var(--active, 0);
+  transition: opacity 300ms ease;
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+  mask-image: linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start, 0) - var(--spread, 20)) * 1deg),
+      #0000 0deg,
+      #fff,
+      #0000 calc(var(--spread, 20) * 2deg)
+    );
+}
+
+@keyframes gravity-bounce {
+  0% { transform: translateY(0); animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); }
+  50% { transform: translateY(-40px); animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rubber-morph {
+  0% { transform: scale(1.4, 0.6); }
+  5% { transform: scale(0.9, 1.1); }
+  15% { transform: scale(1, 1); }
+  50% { transform: scale(1, 1); }
+  85% { transform: scale(0.9, 1.1); }
+  100% { transform: scale(1.4, 0.6); }
+}
+
+@keyframes shadow-breathe {
+  0% { transform: scale(1.4); opacity: 0.6; }
+  50% { transform: scale(0.5); opacity: 0.1; }
+  100% { transform: scale(1.4); opacity: 0.6; }
+}
+
+@keyframes ripple-expand {
+  0% { transform: scale(0.5); opacity: 0; border-width: 4px; }
+  5% { opacity: 0.8; }
+  30% { transform: scale(1.5); opacity: 0; border-width: 0px; }
+  100% { transform: scale(1.5); opacity: 0; }
 }

@@ -14,6 +14,18 @@ section {
   padding: 0 2rem;
 }
 
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
 /* Smooth animations */
 @keyframes fadeInUp {
   from {
