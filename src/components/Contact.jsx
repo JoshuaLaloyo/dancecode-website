@@ -16,8 +16,8 @@ const Contact = () => {
           <div className="contact-header">
             <h2 className="section-title">Let's Build Something <span className="gradient-text">Amazing</span></h2>
             <p className="contact-description">
-              Have a project in mind? We'd love to hear about it! 
-              Start a conversation with us on WhatsApp and let's bring your vision to life.
+              Ready to transform your ideas into stunning digital experiences? 
+              Connect with us on WhatsApp and let's discuss how we can elevate your online presence today.
             </p>
           </div>
           <button className="contact-whatsapp-btn" onClick={handleWhatsAppClick}>
@@ -27,8 +27,8 @@ const Contact = () => {
               </svg>
             </div>
             <div className="whatsapp-btn-text">
-              <span className="whatsapp-btn-title">Start a Conversation</span>
-              <span className="whatsapp-btn-subtitle">We reply instantly on WhatsApp</span>
+              <span className="whatsapp-btn-title">Ready to Get Started?</span>
+              <span className="whatsapp-btn-subtitle">Send us a message on WhatsApp today</span>
             </div>
           </button>
         </div>

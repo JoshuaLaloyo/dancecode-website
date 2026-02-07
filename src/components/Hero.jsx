@@ -15,11 +15,11 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Building <span className="gradient-text">Clean</span> & <span className="gradient-text">Modern</span> Websites
+              <span className="gradient-text">Premium</span> Web Solutions That <span className="gradient-text">Dance</span> to Your Beat
             </h1>
             <p className="hero-description">
-              We craft beautiful, functional web experiences that bring your ideas to life. 
-              Simple, elegant, and playful — just like code should be. ✨
+              At DanceCode, we create stunning, high-performance websites that captivate your audience and drive real results. 
+              From concept to launch, we're your trusted partner in building digital experiences that matter. 💫
             </p>
             <button className="whatsapp-cta" onClick={handleWhatsAppClick}>
               <svg className="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">

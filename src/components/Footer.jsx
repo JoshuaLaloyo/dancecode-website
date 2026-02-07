@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer__container">
         <div className="footer__brand">
           <h3>DanceCode</h3>
-          <p>Move. Code. Dance.</p>
+          <p>Where Code Meets Creativity</p>
         </div>
 
         <nav className="footer__links" aria-label="Footer links">

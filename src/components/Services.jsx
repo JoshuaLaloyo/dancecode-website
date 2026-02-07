@@ -6,7 +6,7 @@ const Services = () => {
     {
       id: 1,
       title: 'Web Design',
-      description: 'Beautiful, user-friendly interfaces that captivate and engage your audience.',
+      description: 'Custom, visually stunning website designs that reflect your brand and engage visitors. We create responsive, intuitive interfaces that turn visitors into customers.',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -18,7 +18,7 @@ const Services = () => {
     {
       id: 2,
       title: 'Web Development',
-      description: 'Robust, scalable solutions built with modern technologies and best practices.',
+      description: 'Fast, secure, and scalable websites built with cutting-edge technology. We ensure your site performs flawlessly across all devices and handles your success.',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="16 18 22 12 16 6"/>
@@ -29,7 +29,7 @@ const Services = () => {
     {
       id: 3,
       title: 'Maintenance & Support',
-      description: 'Ongoing support to keep your website running smoothly and up-to-date.',
+      description: 'Continuous care and optimization for your website. We handle updates, security, and performance so you can focus on your business.',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -44,7 +44,7 @@ const Services = () => {
         <div className="services-header">
           <h2 className="section-title">What We <span className="gradient-text">Offer</span></h2>
           <p className="section-description">
-            Comprehensive web solutions tailored to your needs
+            Comprehensive web solutions designed to help your business thrive online
           </p>
         </div>
         <div className="services-grid">
