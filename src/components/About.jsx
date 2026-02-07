@@ -7,14 +7,14 @@ const About = () => {
       id: 1,
       name: 'Jay',
       role: 'Full Stack Developer',
-      image: 'src/images/jay.jpeg',
+      image: '/images/jay.jpeg',
       description: 'With expertise in modern web technologies, Jay transforms complex ideas into elegant, performant solutions. Dedicated to writing clean code and delivering exceptional user experiences.'
     },
     {
       id: 2,
       name: 'Josh',
       role: 'UI/UX Designer',
-      image: 'src/images/josh.jpeg',
+      image: '/images/josh.jpeg',
       description: 'Josh brings designs to life with a keen eye for detail and user-centered thinking. Passionate about creating intuitive interfaces that blend aesthetics with functionality.'
     }
   ];
