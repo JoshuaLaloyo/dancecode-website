@@ -3,6 +3,14 @@ import './About.css';
 import { GlowingEffect } from './ui/glowing-effect';
 
 const About = () => {
+
+  const whatsappNumber = '256767934191'; // Replace with your actual WhatsApp number
+  const whatsappMessage = 'Hi! I found your website and would like to chat.';
+
+    const handleClick = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+  };
+
   const team = [
     {
       id: 1,
@@ -70,12 +78,12 @@ const About = () => {
                 <span className="team-badge">{member.badge}</span>
                 <p className="team-description">{member.description}</p>
                 <div className="team-actions">
-                  <button className="team-action" type="button" aria-label="Connect">
+                  <button className="team-action" type="button" aria-label="Connect" onClick={handleClick}>
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M12 6v12M6 12h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                     </svg>
                   </button>
-                  <button className="team-action" type="button" aria-label="Message">
+                  <button className="team-action" type="button" aria-label="Message" onClick={handleClick}>
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M21 12a8.5 8.5 0 0 1-8.5 8.5H7l-4 3 1.4-4.6A8.5 8.5 0 1 1 21 12Z" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
                     </svg>
