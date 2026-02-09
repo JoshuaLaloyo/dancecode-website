@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
@@ -36,11 +37,12 @@ function Footer() {
           <div className="footer__col">
             <h4>Contact Us</h4>
             <ul>
-              <li>123 Innovation Street</li>
-              <li>Tech City, TC 12345</li>
-              <li>Phone: (123) 456-7890</li>
+              <li>Laroo</li>
+              <li>Gulu City, Uganda</li>
+              <li>Phone: (+256) 767-934-191</li>
+              <li>Phone: (+256) 785-479-306</li>
               <li>
-                <a href="mailto:hello@dancecode.com">hello@dancecode.com</a>
+                <a href="mailto:info@dancecode.com">info@dancecode.com</a>
               </li>
             </ul>
           </div>
@@ -57,11 +59,11 @@ function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>© {new Date().getFullYear()} DanceCode. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} dancecode. All rights reserved.</p>
           <div className="footer__legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Settings</a>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms &amp; Conditions</Link>
+            <Link to="/cookies">Cookie Settings</Link>
           </div>
         </div>
       </div>

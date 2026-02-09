@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -36,6 +36,8 @@
   align-items: center;
   gap: 0.25rem;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo-word {
