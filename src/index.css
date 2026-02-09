@@ -32,7 +32,42 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: perspective(900px) translateY(44px) scale(0.96) rotateX(6deg) rotateZ(-1.5deg);
+  transform-origin: center bottom;
+  filter: blur(3px);
+  transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform, filter;
+  backface-visibility: hidden;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: perspective(900px) translateY(0) scale(1) rotateX(0) rotateZ(0);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
 }
 
 #root {

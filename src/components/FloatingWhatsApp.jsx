@@ -3,8 +3,9 @@ import './FloatingWhatsApp.css';
 
 const FloatingWhatsApp = () => {
   const [visible, setVisible] = useState(false);
-  const whatsappNumber = '1234567890'; // Replace with your actual WhatsApp number
+  const whatsappNumber = '+256767934191';
   const whatsappMessage = 'Hi! I found your website and would like to chat.';
+  const normalizedNumber = whatsappNumber.replace(/[^0-9]/g, '');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,7 +17,10 @@ const FloatingWhatsApp = () => {
   }, []);
 
   const handleClick = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    window.open(
+      `https://wa.me/${normalizedNumber}?text=${encodeURIComponent(whatsappMessage)}`,
+      '_blank'
+    );
   };
 
   return (

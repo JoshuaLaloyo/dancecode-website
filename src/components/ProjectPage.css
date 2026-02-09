@@ -1,0 +1,110 @@
+.project-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 0 110px;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, rgba(0, 217, 255, 0.2), transparent 45%),
+    linear-gradient(150deg, #060a16 0%, #0c1526 45%, #0a0f1c 100%);
+}
+
+.project-page__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 10%, rgba(0, 153, 255, 0.35), transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(0, 217, 255, 0.25), transparent 55%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.project-page__header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-page__back {
+  align-self: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-page__back:hover {
+  border-color: rgba(0, 217, 255, 0.6);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+}
+
+.project-page__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-page__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.7rem;
+  color: rgba(0, 217, 255, 0.8);
+}
+
+.project-page__title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.project-page__subtitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1rem;
+  max-width: 520px;
+}
+
+.project-page__body {
+  position: relative;
+  z-index: 2;
+  margin-top: 2.5rem;
+}
+
+.project-page__loading {
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.project-page__loader {
+  min-height: auto;
+  padding: 0;
+}
+
+@media (min-width: 900px) {
+  .project-page__header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-page {
+    padding: 100px 0 90px;
+  }
+}

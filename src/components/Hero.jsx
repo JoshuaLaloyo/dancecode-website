@@ -6,13 +6,14 @@ export default function Hero() {
   const heroRef = useRef(null);
 
   // WhatsApp logic
-  const whatsappNumber = "256767934191";
+  const whatsappNumber = "+256767934191";
   const whatsappMessage =
     "Hi! I would like to discuss a project with danceCode.";
 
   const handleWhatsAppClick = () => {
+    const normalizedNumber = whatsappNumber.replace(/[^0-9]/g, "");
     window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      `https://wa.me/${normalizedNumber}?text=${encodeURIComponent(
         whatsappMessage
       )}`,
       "_blank"

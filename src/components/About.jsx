@@ -11,7 +11,8 @@ const About = () => {
       image: '/images/jay.jpeg',
       description: 'With expertise in modern web technologies, Jay transforms complex ideas into elegant, performant solutions.',
       badge: 'Core',
-      meta: 'DanceCode Team'
+      meta: 'DanceCode Team',
+      phone: '+256767934191'
     },
     {
       id: 2,
@@ -20,7 +21,8 @@ const About = () => {
       image: '/images/josh.jpeg',
       description: 'Josh brings designs to life with a keen eye for detail and user-centered thinking.',
       badge: 'Premium',
-      meta: 'DanceCode Team'
+      meta: 'DanceCode Team',
+      phone: '+256785479306'
     }
   ];
 
@@ -70,16 +72,26 @@ const About = () => {
                 <span className="team-badge">{member.badge}</span>
                 <p className="team-description">{member.description}</p>
                 <div className="team-actions">
-                  <button className="team-action" type="button" aria-label="Connect">
+                  <a
+                    className="team-action"
+                    href={`tel:${member.phone}`}
+                    aria-label={`Call ${member.name}`}
+                  >
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M12 6v12M6 12h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                     </svg>
-                  </button>
-                  <button className="team-action" type="button" aria-label="Message">
+                  </a>
+                  <a
+                    className="team-action"
+                    href={`https://wa.me/${member.phone.replace(/[^0-9]/g, '')}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Message ${member.name} on WhatsApp`}
+                  >
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M21 12a8.5 8.5 0 0 1-8.5 8.5H7l-4 3 1.4-4.6A8.5 8.5 0 1 1 21 12Z" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
                     </svg>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
