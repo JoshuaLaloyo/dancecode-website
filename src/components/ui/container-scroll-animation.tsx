@@ -115,8 +115,8 @@ export const Card = ({
   return (
     <motion.div
 style={{
-  rotateX: rotate,
-  scale,
+  rotateX: 0,
+  scale: 1,
  boxShadow: isMobile
   ? "0 8px 20px rgba(0,0,0,0.18)"
   : "0 25px 60px rgba(0,0,0,0.25)",
