@@ -11,7 +11,7 @@ export default function SmoothScroll() {
 
     const lenis = new Lenis({
       smooth: true,
-      lerp: isMobile ? 0.15 : 0.1, // Faster lerp on mobile for snappier feel
+      lerp: isMobile ? 0.1 : 0.05, // Faster lerp on mobile for snappier feel
       wheelMultiplier: isMobile ? 1 : 0.75,
       touchMultiplier: isMobile ? 1.5 : 0.9, // More responsive touch
       infinite: false,
