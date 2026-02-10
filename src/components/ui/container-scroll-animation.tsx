@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import { useSpring } from "framer-motion";
+import { useScroll, useTransform, motion, MotionValue, useSpring } from "framer-motion";
+
 
 export const ContainerScroll = ({
   titleComponent,
@@ -33,22 +33,34 @@ export const ContainerScroll = ({
   };
 }, []);
 
-  const scaleDimensions = () => {
-    return isMobile ? [0.95, 1] : [1.05, 1];
-  };
+  const scaleRange = React.useMemo(() => {
+  return isMobile ? [0.95, 1] : [1.05, 1];
+}, [isMobile]);
 
-const rotate = useTransform(
+const rawRotate = useTransform(
   scrollYProgress,
   [0, 1],
-  isMobile ? [0, 0] : [20, 0]
+  isMobile ? [0, 0] : [15, 0]
 );
-  const rawScale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
+
+const rotate = useSpring(rawRotate, {
+  stiffness: 130,
+  damping: 25,
+});
+
+const rawScale = useTransform(scrollYProgress, [0, 1], scaleRange);
 
 const scale = useSpring(rawScale, {
   stiffness: 130,
   damping: 25,
 });
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const rawTranslate = useTransform(scrollYProgress, [0, 1], 
+    isMobile ? [0, -40] : [0, -100]);
+
+const translate = useSpring(rawTranslate, {
+  stiffness: 130,
+  damping: 20,
+});
 
   return (
     <div
@@ -105,11 +117,11 @@ export const Card = ({
 style={{
   rotateX: rotate,
   scale,
-  boxShadow: isMobile
-    ? "0 10px 25px rgba(0,0,0,0.25)"
-    : "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+ boxShadow: isMobile
+  ? "0 8px 20px rgba(0,0,0,0.18)"
+  : "0 25px 60px rgba(0,0,0,0.25)",
 }}
-      className="max-w-5xl will-change-transform -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+      className="max-w-5xl will-change-transform transform-gpu -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px]"
     >
       <div className=" h-full w-full  overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
         {children}
