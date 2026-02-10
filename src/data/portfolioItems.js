@@ -19,22 +19,22 @@ const portfolioItems = [
       {
         label: 'Homepage',
         image:
-          '/images/product1-1.png',
+          '/images/product1-1.webp',
       },
       {
         label: 'Gallery',
         image:
-          '/images/product1-2.png',
+          '/images/product1-2.webp',
       },
       {
         label: 'Contact',
         image:
-          '/images/product1-3.png',
+          '/images/product1-3.webp',
       },
       {
         label: 'Location',
         image:
-          '/images/product1-4.png',
+          '/images/product1-4.webp',
       },
     ],
   },
@@ -58,22 +58,22 @@ const portfolioItems = [
       {
         label: 'Overview',
         image:
-          '/images/product2-1.png',
+          '/images/product2-1.webp',
       },
       {
         label: 'Features',
         image:
-          '/images/product2-2.png',
+          '/images/product2-2.webp',
       },
       {
         label: 'Platform',
         image:
-          '/images/product2-3.png',
+          '/images/product2-3.webp',
       },
       {
         label: 'Pricing',
         image:
-          '/images/product2-4.png',
+          '/images/product2-4.webp',
       },
     ],
   },
@@ -97,22 +97,22 @@ const portfolioItems = [
       {
         label: 'Hero',
         image:
-          '/images/product3-1.png',
+          '/images/product3-1.webp',
       },
       {
         label: 'Projects',
         image:
-          '/images/product3-2.png',
+          '/images/product3-2.webp',
       },
       {
         label: 'Showreel',
         image:
-          '/images/product3-3.png',
+          '/images/product3-3.webp',
       },
       {
         label: 'Studio',
         image:
-          '/images/product3-4.png',
+          '/images/product3-4.webp',
       },
     ],
   },
@@ -136,22 +136,22 @@ const portfolioItems = [
       {
         label: 'Lookbook',
         image:
-          '/images/product4-1.png',
+          '/images/product4-1.webp',
       },
       {
         label: 'Catalog',
         image:
-          '/images/product4-2.png',
+          '/images/product4-2.webp',
       },
       {
         label: 'Product',
         image:
-          '/images/product4-3.png',
+          '/images/product4-3.webp',
       },
       {
         label: 'Checkout',
         image:
-          '/images/product4-4.png',
+          '/images/product4-4.webp',
       },
     ],
   },
