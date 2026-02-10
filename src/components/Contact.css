@@ -181,6 +181,7 @@
 @media (max-width: 640px) {
   .contact-connect__panel {
     padding: 1.6rem;
+    backdrop-filter: blur(5px);
   }
 
   .contact-connect__grid {

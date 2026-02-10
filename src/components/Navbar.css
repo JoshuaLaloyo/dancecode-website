@@ -181,6 +181,7 @@
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem 0;
+    backdrop-filter: blur(5px);
   }
 
   .logo {
@@ -193,6 +194,10 @@
 
   .nav-links a {
     font-size: 0.9rem;
+  }
+
+  .mobile-menu {
+    backdrop-filter: blur(5px);
   }
 }
 

@@ -530,3 +530,9 @@
     font-size: 1.1rem;
   }
 }
+
+@media (max-width: 768px) {
+ .portfolio-card__inner {
+  backdrop-filter: blur(6px);
+ }
+}

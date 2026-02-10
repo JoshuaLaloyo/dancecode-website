@@ -161,7 +161,7 @@ function App() {
       <ScrollReveal />
       {isRouteLoading && (
         <div
-          className="loader-overlay fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          className="loader-overlay fixed inset-0 z-50 flex items-center justify-center bg-black/70"
           role="status"
           aria-live="polite"
           aria-label="Loading"

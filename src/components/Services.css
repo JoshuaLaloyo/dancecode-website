@@ -131,5 +131,6 @@
 
   .service-card {
     padding: 2rem;
+    backdrop-filter: blur(5px);
   }
 }
