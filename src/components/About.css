@@ -231,6 +231,7 @@
 
   .team-card__surface {
     padding: 2.4rem 2rem 2rem;
+    backdrop-filter: blur(5px);
   }
 
   .team-image-border {

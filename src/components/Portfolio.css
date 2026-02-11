@@ -113,6 +113,7 @@
   flex-direction: column;
   gap: 0.75rem;
   background: rgba(26, 35, 50, 0.45);
+  min-height:15rem;
 }
 
 .portfolio-card__header {
@@ -528,4 +529,10 @@
   .portfolio-card__title {
     font-size: 1.1rem;
   }
+}
+
+@media (max-width: 768px) {
+ .portfolio-card__inner {
+  backdrop-filter: blur(6px);
+ }
 }

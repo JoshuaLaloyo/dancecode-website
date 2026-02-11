@@ -3,6 +3,14 @@ import './About.css';
 import { GlowingEffect } from './ui/glowing-effect';
 
 const About = () => {
+
+  const whatsappNumber = '256767934191'; // Replace with your actual WhatsApp number
+  const whatsappMessage = 'Hi! I found your website and would like to chat.';
+
+    const handleClick = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+  };
+
   const team = [
     {
       id: 1,
