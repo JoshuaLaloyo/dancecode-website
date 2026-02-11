@@ -8,9 +8,10 @@ export default function SmoothScroll() {
 
     const lenis = new Lenis({
       smooth: true,
-      lerp: 0.05,
-      wheelMultiplier: 0.75,
-      touchMultiplier: 0.9,
+      lerp: 0.12,
+      wheelMultiplier: 1.05,
+      touchMultiplier: 1.25,
+      smoothTouch: true,
     });
 
     window.__lenis = lenis;
